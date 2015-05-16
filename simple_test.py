@@ -7,4 +7,4 @@ second_hypothesis = Node(kind=SimpleDimensions.HYPOTHESIS, uid=2, name='possible
 graph.connect(result=first_observation, given=first_hypothesis, relationship={'weight': 0.1})
 graph.connect(result=first_observation, given=second_hypothesis, relationship={'weight': 0.2})
 graph.connect(result=second_observation, given=second_hypothesis, relationship={'weight': 0.3})
-print graph
+print(graph)

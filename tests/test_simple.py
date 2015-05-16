@@ -1,7 +1,5 @@
 import unittest
 
-import sample
-
 
 class TestSimple(unittest.TestCase):
     

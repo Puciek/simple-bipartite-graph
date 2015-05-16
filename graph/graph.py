@@ -8,7 +8,7 @@ from simple_dimensions import SimpleDimensions
 from node import Node
 
 
-class Graph():
+class Graph:
     """
     Bipartite graph. There are two kinds of nodes: hypotheses and observations.
     At the moment the Graph.to_dict and Graph.from_dict do not allow relationships
@@ -163,14 +163,14 @@ class Graph():
         if keys_dimension not in [self.hypothesis_kind, self.observation_kind]:
             if self.verbose > 0:
                 print("Graph.from_dict: wrong nodes for keys and values: %s" %
-                          keys_dimension)
+                      keys_dimension)
             return None
 
         d = defaultdict(set)
         for k in self.nodes(keys_dimension):
             for node in self.connected(k):
                 if verbose > 3:
-                    print 'g[' + k.uid + '] = ' + node.uid
+                    print('g[' + k.uid + '] = ' + node.uid)
                 d[k].add(node)
         return d
 

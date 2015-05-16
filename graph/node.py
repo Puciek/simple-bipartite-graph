@@ -66,24 +66,25 @@ class Node(collections.MutableMapping):
         z = self.__get_full_dict()
         return iter(z)
 
-    def update(self, E=None, **F):
+    def update(self, e=None, **f):
         """Update node's values with the given one, uid and kind excluded.
         """
-        if E:
+        if e:
+            # noinspection PyBroadException
             try:
-                for k in E:
+                for k in e:
                     if k not in {"uid", "kind"}:
-                        self[k] = E[k]
-            except:
+                        self[k] = e[k]
+            except:  # What is actualyl excepted here? What is the point of it?
                 try:
-                    for (k, v) in E:
+                    for (k, v) in e:
                         if k not in {"uid", "kind"}:
-                            self[k] = E[k]
+                            self[k] = e[k]
                 except:
-                    raise TypeError("%s not iterable." % E)
-        for k in F:
+                    raise TypeError("%s not iterable." % e)
+        for k in f:
             if k not in {"uid", "kind"}:
-                self[k] = F[k]
+                self[k] = f[k]
 
     def keys(self):
         z = self.__get_full_dict()
@@ -95,7 +96,7 @@ class Node(collections.MutableMapping):
 
     def iteritems(self):
         z = self.__get_full_dict()
-        return z.iteritems()
+        return z.items()
 
     def __str__(self):
         return str(self.__get_full_dict())
