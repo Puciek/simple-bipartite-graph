@@ -4,8 +4,8 @@ __license__ = 'Apache License 2.0'
 __authors__ = 'Mario Alemi'
 
 from collections import defaultdict
-from simple_dimensions import SimpleDimensions
-from node import Node
+from graph.simple_dimensions import SimpleDimensions
+from graph.node import Node
 
 
 class Graph:
